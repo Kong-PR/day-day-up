@@ -2,18 +2,18 @@
 
 - 选择器
 
-  - id选择器：通过#idname实现选择，只能在HTML中出现一次
+  - id选择器：通过#idname实现选择，只能在HTML中出现一次  
     ![image-20210116165503794](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210116165503794.png)
 
-  - 类选择器：通过.classname实现选择，可以在HTML中出现多次
+  - 类选择器：通过.classname实现选择，可以在HTML中出现多次  
     ![image-20210116165534803](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210116165534803.png)
 
   - > 二者名字都不能以数字开头，有的浏览器不支持
 
-  - 标签选择器：通过HTML标签来实现选择
+  - 标签选择器：通过HTML标签来实现选择  
     ![image-20210116165610285](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210116165610285.png)
 
-  - 内联选择器：直接写在标签内部
+  - 内联选择器：直接写在标签内部  
     ![image-20210116165347490](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210116165347490.png)
 
   - > 这四种 CS 选择器有修饰上的优先级，即：
@@ -22,10 +22,10 @@
 
 - CSS创建
   - 样式表分为三种：外部样式表、内部样式表、内敛样式表
-  - 多重样式表的层叠优先级：
-    ![image-20210116170856434](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210116170856434.png)
-    ![image-20210116170938596](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210116170938596.png)
-  - ![image-20210116171210218](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210116171210218.png)
+  - 多重样式表的层叠优先级：  
+    ![image-20210116170856434](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210116170856434.png)  
+    ![image-20210116170938596](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210116170938596.png)  
+  - ![image-20210116171210218](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210116171210218.png)  
 
 - 盒子模型
   
@@ -53,10 +53,10 @@
   - 用于切换元素的显示状态
   - if会完成删除该元素
   - show仅调整元素的display属性，功耗小
-- v-for
+- v-for  
   - ![image-20210118091326276](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210118091326276.png)
 - v-model
-  - 双向数据绑定，设置表单元素的值
+  - 双向数据绑定，设置表单元素的值  
   - ![image-20210118094430932](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210118094430932.png)
   - 
 
