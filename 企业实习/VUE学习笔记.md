@@ -1,6 +1,8 @@
-## VUE学习笔记
+# VUE学习笔记
 
-#### 基础
+## 基础
+
+### Vue初体验
 
 - 基本特点
     - let 常量、conset变量
@@ -14,6 +16,8 @@
     - beforeCreate created mounted
     - 有回调
 
+### 插值操作
+
 - 插值操作
 
   - Mustache（胡子）: {{message}}
@@ -23,6 +27,8 @@
   - v-text：效果同mustache，但不够灵活。v-text="message"
   - v-pre：相当于不解析 {{}}，原封不动的显示出来
   - v-cloak：vue解析前div中有cloak，解析后无，style中display:none，一般不用
+
+### 动态绑定属性
 
 - 动态绑定属性
 
@@ -40,14 +46,18 @@
   - 动态绑定style
 
     - 对象、数组
-  
+
+### 计算属性
+
 - 计算属性
 
     - computed：funname:gunction(){}
     - 有缓存，多次调用，只计算一次，性能较高 不需要加()调用
     -  set、get 一般没有set方法，相当于只读属性
         ![image-20210123132440478](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210123132440478.png)
-    
+
+### 事件监听
+
 - 事件监听
 
     - v-on： click、keyup、
@@ -57,6 +67,8 @@
       - 简写为 @
       - 修饰符：stop 阻止冒泡；  prevent 阻止默认事件 keyup 键盘监听 once 只一次
         ![image-20210123200044608](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210123200044608.png)
+
+### 条件判断
 
 - 条件判断
 
@@ -70,6 +82,8 @@
       - v-bind:属性
       - 简写为:
 
+### 循环遍历
+
 - 循环遍历
 
     - v-for
@@ -81,6 +95,8 @@
       - 哪些数组的方法是响应式的
         - push、pop、shift、unshift、splice、sort、reverse
         - 通过索引修改数组中元素，不是响应式
+
+### model的使用
 
 - v-model
 
@@ -100,7 +116,11 @@
       - trim 去除空格
       - ![image-20210124194932294](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210124194932294.png)
 
-### 进阶
+## 进阶
+
+### 组件化开发
+
+#### 基本使用
 
 - 组件化
   - 思想：开发出一个个可服用的小组件来构造我们的应用，任何的应用都会呗抽象成一刻组件树，使代码方便组织和管理，易拓展
@@ -111,6 +131,9 @@
 - 全局组件和局部组件
   - 全局组件可以在多个vue的上实例下使用
   - 局部组件，在vue创建声明里使用
+
+#### 父子组件
+
 -  父组件和子组件
   - ![image-20210124225407757](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210124225407757.png)
     ![image-20210124225453581](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210124225453581.png)
@@ -121,7 +144,127 @@
     ![image-20210124230532556](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210124230532556.png)
 - 模板分离
   - script标签、template标签
-    ![image-20210124231228586](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210124231228586.png)
+    ![ ](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210124231228586.png)
+- 组件内部有data数据，必须是函数，返回对象，保存对应属性。
+  ![image-20210127193440611](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210127193440611.png)
+  - 为什么呢？保证数据独立，多次调用数据不互相影响
+    ![image-20210127194542371](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210127194542371.png)
+    
+  - props用法 父组件传递数据到子组件，*需要多记，多练*
+    
+    - ![image-20210130152546249](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130152546249.png)
+      ![image-20210130152603807](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130152603807.png)
+    - 多种写法
+      ![image-20210130154119043](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130154119043.png)
+    - 驼峰的使用
+      ![image-20210130155019426](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130155019426.png)
+    
+  - 子组件传递数据给父组件
+  
+    - ![image-20210130162206582](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130162206582.png)
+  
+      ![image-20210130162349516](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130162349516.png)
+      ![image-20210130162404672](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130162404672.png)
+  
+  - 父子组件实现双向绑定，需要使用发射事件和绑定事件
+    ![image-20210130203038651](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130203038651.png)
+  
+  - ![image-20210130204701007](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130204701007.png)
+  
+  - watch作用
+  
+    - 监听属性的变化，对应做出改变
+      ![image-20210130205142527](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130205142527.png)
+  
+  - 父访问子 两种 children refs **其中refs使用较多**
+    ![image-20210130211127540](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130211127540.png)
+  
+  - 子访问父 parent
+    ![image-20210130211740196](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130211740196.png)
+  
+  - 访问根组件 root
+
+#### 插槽
+
+- 目的
+  - 让封装的组件具有可拓展性
+  - 让使用使用这事儿决定最终展示什么
+- 如何
+  - 保留共性，去除不同
+- 基本使用
+  - ![image-20210130214510992](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130214510992.png)
+- 具名插槽
+  - ![image-20210130214946728](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210130214946728.png)
+- 编译作用域
+  - 使用当前模板下的变量，相当于把cpn当做是一个div
+    ![image-20210131104344821](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210131104344821.png)
+  - ![image-20210131104606439](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210131104606439.png)
+  - 作用域插槽 父组件替换子组件的展示，使用子组件的内容
+    ![image-20210131105826300](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210131105826300.png)
+
+### 模块化开发
+
+- 公共变量命名重复的问题
+
+  - ES5：匿名函数实现模块化
+    ![image-20210131185809988](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210131185809988.png)
+  - 常见的模块化规范：commandJS、AMD、CMD还有ES6的Modules
+  - commomjs的导入导出
+    ![image-20210131190643776](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210131190643776.png)
+
+- ES6的模块化
+
+  - 导出
+    ![image-20210131192219391](../../../AppData/Roaming/Typora/typora-user-images/image-20210131192219391.png)
+    ![image-20210131200516150](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210131200516150.png)
+
+  - 导入
+
+    ![image-20210131200916304](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210131200916304.png)
+
+    ![image-20210131201014884](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210131201014884.png)
+
+## webpack
+
+![image-20210131203110629](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210131203110629.png)
+
+### webpack的使用
+
+#### 起步
+
+- 77
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -146,7 +289,7 @@
 
 
 
-### ES6语法
+## ES6语法
 
 - var 可以当做js语言设计上的错误，为了修复这个问题，有了关键字let 用来替换var
 - 块级作用域：var 没有块级作用域
@@ -157,7 +300,7 @@
 - 函数的增强写法
   
 
-### 高阶函数的使用
+## 高阶函数的使用
 
 - 编程范式
   - 命令式编程、声明式编程
