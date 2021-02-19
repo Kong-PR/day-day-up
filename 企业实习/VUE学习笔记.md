@@ -266,7 +266,7 @@
   - plugin
     - loader更像一个加载器，而plugin更像一个扩展器
     - 添加版权的插件
-      ![image-20210203203525148](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210203203525148.png)
+      <img src="https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210203203525148.png" alt="image-20210203203525148" width=600 />
     - 设置打包后自动生成index.html
     - 丑化 uglifyjs 做代码压缩
     - 。。。
@@ -281,14 +281,65 @@
 - 依赖node webpack
 - 项目组成：VUEcore + router + vuex + vue
 
+### 基础
+
+- 结构编译过程
+  - runtime compiler : template -> ast() -> 编译成render函数 -> virtual dom -> UI
+  - runtime only（性能更高、代码量更少） : vdom -> UI
+    由vue-template-compiler完成编译前几步 
+- 项目构建
+  - CLI3 比CLI2少了很多配置
+
+### 箭头函数的使用
+
+- 在ES6中使用箭头函数来定义
+  ![image-20210205135136519](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210205135136519.png)
+- ![image-20210205135652799](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210205135652799.png)
+  ![image-20210205140127492](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210205140127492.png)
+- this的使用 
 
 
 
+## Vue-Router
 
+### 基础
 
+- 后端路由
+  ![image-20210205152524129](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210205152524129.png)
+- 前后端分离
+  后端只负责提供数据，不负责任何阶段的内容
+  ![image-20210205154718993](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210205154718993.png)
+- SPA 单页面富应用阶段 在前后端分离的基础上，增加一层前端路由
+  ![image-20210205162540125](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210205162540125.png)
+- url路由更改hash，不会产生网页刷新
+  ![image-20210218140931430](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210218140931430.png)
+  history模式：replaceState不能返回状态，与push区别
+  ![image-20210218141434232](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210218141434232.png)
 
-### Vue-Router
+### 使用vue-router
 
-### Vuex
+- ![image-20210218145928037](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210218145928037.png)
+- 使用
+  ![image-20210218145947340](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210218145947340.png)
+- 路由默认值改为history 防止出现#在路径中
+  ![image-20210218153603505](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210218153603505.png)
+- router-link补充
+  ![image-20210218155503425](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210218155503425.png)
+- 路由跳转 代码
+  ![image-20210218162134051](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210218162134051.png)
+- 动态路由
+  -  ￥router和￥route 后者是水处于活跃状态，获取的就是谁，前者是整个的路由对象
+- 路由的懒加载 
+  ![image-20210219153040941](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210219153040941.png)
+  推荐在外面定义，在里面引用
+- 嵌套路由
+  - ![image-20210219163640313](https://raw.githubusercontent.com/Kong-PR/Typora-picture/master/img/image-20210219163640313.png)
 
-### 网络封装
+### 传递参数
+
+- 
+
+## Vuex
+
+## 网络封装
+
